@@ -1,4 +1,4 @@
-package it.polito.tdp.provaGit;
+package it.polito.tdp.regine;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;

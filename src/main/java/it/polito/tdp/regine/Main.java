@@ -1,4 +1,4 @@
-package it.polito.tdp.provaGit;
+package it.polito.tdp.regine;
 
 public class Main {
 	public static void main(String[] args) {
