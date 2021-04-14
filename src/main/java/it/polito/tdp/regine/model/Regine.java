@@ -20,28 +20,30 @@ public class Regine {
 	private int N;
 	private List<Integer> soluzione;
 	
-	public List<Integer> risolvi(int N){
+	public List<Integer> risolvi(int N){// N è il numero di righe e colonne della scacchiera
 		this.N=N;
 		List<Integer> parziale=new ArrayList<Integer>();//non LinkedList perche sotto facciamo .get: nella lista e' troppo complesso, aggiungo ritardo!
 		this.soluzione=null;
 		
-		cerca(parziale,0);
+		cerca(parziale,0); //passiamo parziale e livello
 		
 		return this.soluzione;
 		
 	}
 	
-	//cerca==true-->trovato; cerca==false-->cerca ancora
+	//cerca==true --> trovato; 
+	//cerca==false --> cerca ancora
+	
 	private boolean cerca(List<Integer>parziale, int livello) { //[0,6,4,7]
+		
 		if(livello==N) {
-			// caso terminale
-			//System.out.println(parziale);
+			//CASO TERMINALE
 			this.soluzione=new ArrayList<>(parziale); //aggiorno soluzione
 			return true; //1:ho la soluzione
 		} 
 		else {
 			for(int colonna=0; colonna<N; colonna++) {//possibili posizioni in cui posso mettere la regina
-				// if la possa nella casella [livello][colonna] è valida
+				// if la pos nella casella [livello][colonna] è valida
 				// se sì, aggiungi a parziale e fai ricorsione
 				if(posValida(parziale,colonna)) {//per mantenere codice ricorsivo il piu' chiaro possibile
 					
